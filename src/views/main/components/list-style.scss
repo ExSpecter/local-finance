@@ -1,0 +1,233 @@
+.title {
+    margin: 0px 15px;
+    flex: 0 0 auto;
+
+    color: #455A64;
+    font-weight: bold;
+    font-size: 1.1em;
+
+}
+
+.filter-buttons {
+    padding: 0px 15px 10px;
+    display: flex;
+
+    .icon {
+        width: 22px;
+        height: 22px;
+        opacity: 0;
+        color: var(--color-grey);
+
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+            color: white;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        &.date {
+            flex: 0 1 100px;
+        }
+
+        &.text {
+            flex: 1;
+        }
+
+        &.amount {
+            flex: 0 1 75px;
+        }
+    }
+
+}
+
+.flow-list {
+    // overflow: auto;
+    flex: 0 1 auto;
+    padding: 0px 15px;
+
+    ul {
+        li {
+            text-decoration: none;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+
+            &.flow-item {
+                cursor: pointer;
+            }
+
+            span.date {
+                flex: 0 0 92px;
+                color: white;
+                font-weight: bold;
+            }
+
+            span.text {
+                padding: 0px 8px;
+                word-break: break-word;
+                color: white;
+
+                min-width: 0;
+
+                flex: 1 1 auto;
+
+                .tooltip-wrapper {
+                    position: relative;
+                    font-size: .6em;
+
+                    div.usageText {
+                        color: #9E9E9E;
+
+                        width: 100%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+
+                        display: inline-block;
+
+                        
+
+                        &:hover + .tooltip {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    .tooltip {
+                        visibility: hidden;
+                        opacity: 0;
+                        width: 100%;
+                        background-color: var(--color-grey-dark);
+                        color: #fff;
+                        text-align: center;
+                        padding: 5px 10px;
+                        border-radius: 6px;
+                        white-space: normal;
+
+                        position: absolute;
+                        z-index: 1;
+
+                        transition: opacity .2s linear;
+                        transition-delay: .2s;
+
+                        font-size: 1.2em;
+
+                        &.last {
+                            bottom: 100%;
+                        }
+                    }
+                }
+            }
+
+            div.amount-wrapper {
+                flex: 1 0 auto;
+                text-align: right;
+
+                div.merged-item-count {
+                    color: rgba(#fff, .7);
+                    font-size: .9em;
+                    width: 100%;
+                    text-align: center;
+
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(#fff, .3);
+                    }
+
+                    .close-botton {
+                        width: 19px; 
+                        height: 19px;
+                        margin: 0px auto;
+                    } 
+                }
+            }
+
+            &.merged-items {
+                margin-top: 10px;
+                background-color: var(--color-grey-dark);
+                opacity: .7;
+
+                overflow: hidden;
+                padding: 15px 5px;
+            }
+
+            &.submenu {
+                background-color: var(--color-grey-dark);
+                margin-top: 10px;
+
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+                justify-items: streched;
+
+                .item {
+                    color: white;
+                    cursor: pointer;
+
+                    padding: 5px 0px;
+
+                    text-align: center;
+
+                    &:hover {
+                        background-color: rgba(#fff, .03);
+                    }
+                }
+            }
+        }
+
+        li:first-of-type {
+            margin-top: 0px;
+        }
+    }
+
+    &.sublist {
+        ul li span.text .tooltip-wrapper div.usageText {
+            color: white;
+            font-size: 1em;
+
+            width: 100%;
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: unset;
+        }
+        
+        span.date {
+            font-weight: normal;
+        }
+    }
+}
+
+.total-amount {
+    margin-top: auto;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+// CUSTOM SCROLLBAR
+
+/* width */
+::-webkit-scrollbar {
+width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}

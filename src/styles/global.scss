@@ -1,0 +1,21 @@
+$menu-transition: .7s ease-in-out;
+$menu-background: rgba(black, .08);
+$menu-item-hover-background: var(--color-main-dark);
+
+* {
+    box-sizing: border-box;
+}
+
+.income {
+    color: var(--incomeFlowColor);
+}
+
+.spending {
+    color: var(--spendingFlowColor);
+}
+
+.upload-area-wrapper {
+    &:hover ~ .card-wrapper {
+        transform: translate(-25vw);
+    }
+}

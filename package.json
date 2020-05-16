@@ -1,0 +1,84 @@
+{
+  "name": "local-finance",
+  "productName": "local-finance",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "concurrently \"npm:svelte-dev\" \"electron-forge start\"",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "svelte-build": "rollup -c",
+    "svelte-dev": "SET NODE_ENV=dev && rollup -c -w",
+    "svelte-start": "sirv public --single",
+    "svelte-start:dev": "sirv public --single --dev"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Garrelt Becker",
+    "email": "garrelt.becker@web.de"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "local_finance"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "csvtojson": "^2.0.10",
+    "date-arithmetic": "^4.1.0",
+    "electron-reload": "^1.5.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "file-saver": "^2.0.2",
+    "nedb": "^1.8.0",
+    "nedb-promises": "^4.0.3",
+    "node-sass": "^4.13.1",
+    "postcss": "^7.0.27",
+    "sirv-cli": "^0.4.4",
+    "string-similarity": "^3.0.0",
+    "svelte-icons": "^2.1.0",
+    "svelte-preprocess": "^3.5.0",
+    "util": "^0.12.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.51",
+    "@electron-forge/maker-deb": "^6.0.0-beta.51",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.51",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.51",
+    "@electron-forge/maker-zip": "^6.0.0-beta.51",
+    "@rollup/plugin-alias": "^3.1.0",
+    "electron": "8.2.4",
+    "rollup": "^1.32.1",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.3.0",
+    "svelte": "^3.20.1"
+  }
+}
