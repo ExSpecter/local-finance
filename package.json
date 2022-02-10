@@ -57,7 +57,7 @@
     "file-saver": "^2.0.2",
     "nedb": "^1.8.0",
     "nedb-promises": "^4.0.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss": "^7.0.27",
     "sirv-cli": "^0.4.4",
     "string-similarity": "^3.0.0",
